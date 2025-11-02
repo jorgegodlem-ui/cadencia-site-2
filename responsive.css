@@ -47,3 +47,21 @@ button, .button {
     text-align: center;
   }
 }
+/* --- CORRIGE BOTÓN HABLEMOS EN MÓVIL --- */
+@media (max-width: 768px){
+  .hero,
+  .cta,
+  .contact,
+  .hablemos {
+    text-align: center;            /* centra el contenido */
+    justify-content: center !important; /* centra si es flex */
+    align-items: center !important;
+  }
+
+  .hero .button,
+  .cta .button,
+  .hablemos .button {
+    margin-inline: auto;           /* centra el botón horizontalmente */
+    display: inline-block;
+  }
+}
