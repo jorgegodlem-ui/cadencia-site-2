@@ -176,3 +176,24 @@ nav.nav {
 
   body.no-scroll { overflow: hidden; }
 }
+/* Burger */
+.burger{display:inline-flex;flex-direction:column;gap:5px;width:40px;height:40px;
+  align-items:center;justify-content:center;background:transparent;border:0;cursor:pointer}
+.burger span{display:block;width:22px;height:2px;background:#0f172a;transition:.25s}
+@media(min-width:960px){.burger{display:none}}
+/* Nav desktop */
+.nav-links.desktop{display:none}
+@media(min-width:960px){.nav-links.desktop{display:flex}}
+/* Panel móvil */
+.menu{position:fixed;inset:0;top:68px; /* altura del nav */
+  background:#fff;transform:translateX(100%);transition:transform .3s ease;
+  padding:24px 20px 40px;display:flex;flex-direction:column;gap:18px;z-index:999}
+.menu.open{transform:translateX(0)}
+.menu .mi{font-size:20px;line-height:1.3;padding:14px 6px;border-bottom:1px solid #eef2ff}
+.menu .cta-mobile{margin-top:8px;display:inline-flex;justify-content:center;
+  background:linear-gradient(135deg,var(--azul),var(--azul-2));color:#fff;padding:14px;border-radius:12px;border:0}
+body.no-scroll{overflow:hidden}
+/* Estado “X” al abrir */
+.burger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.active span:nth-child(2){opacity:0}
+.burger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
