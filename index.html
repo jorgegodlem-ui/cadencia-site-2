@@ -125,32 +125,35 @@ nav.nav.nav--hide{ transform: translateY(-100%); } /* <- se oculta al bajar */
 </head>
 <body>
   <!-- NAV -->
-<nav class="nav" data-auto-hide="true">
+<nav class="nav">
   <div class="container nav-inner">
-    <!-- LOGO -->
-    <a class="brand" href="#home">
-      <img
-        src="data:image/png;base64,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"
-        alt="Cadencia Digital logo"
-      />
+    <a href="/" class="brand" aria-label="Cadencia Digital">
+      <img src="./assets/logo.svg" alt="Cadencia Digital" width="128" height="32">
     </a>
 
-    <!-- BOTÓN HAMBURGUESA (solo visible en mobile) -->
-    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
+    <!-- Botón hamburguesa (solo mobile) -->
+    <button class="burger" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
       <span></span><span></span><span></span>
     </button>
 
-    <!-- LINKS -->
-    <div id="navMenu" class="nav-links">
+    <!-- Links desktop -->
+    <div class="nav-links desktop">
       <a href="#servicios">Servicios</a>
       <a href="#proceso">Proceso</a>
-      <a href="#testimonios">Testimonios</a>
       <a href="#clientes">Clientes</a>
-      <a href="#contacto">Contacto</a>
-      <a class="cta" href="https://wa.me/56965670113?text=Hola%20Cadencia%20Digital" target="_blank" rel="noopener">Hablemos</a>
+      <a href="#contacto" class="cta">Hablemos</a>
     </div>
   </div>
+
+  <!-- Panel móvil -->
+  <div id="menu" class="menu">
+    <a href="#servicios" class="mi">Servicios</a>
+    <a href="#proceso" class="mi">Proceso</a>
+    <a href="#clientes" class="mi">Clientes</a>
+    <a href="#contacto" class="mi cta-mobile">Hablemos</a>
+  </div>
 </nav>
+
 
 
   <!-- HERO -->
