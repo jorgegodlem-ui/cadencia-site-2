@@ -30,12 +30,30 @@
     .container{max-width:var(--container);margin:0 auto;padding:0 20px}
     section{margin-top:var(--section-margin);margin-bottom:var(--section-margin)}
 
-    /* NAV */
-    nav.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(94,142,255,.08)}
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
-    .brand img{height:144px;display:block}
-    .nav-links{display:flex;gap:22px;align-items:center}
-    .cta{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--azul),var(--azul-2));color:#fff;height:40px;padding:0 16px;border-radius:12px;font-weight:700;line-height:1;border:0}
+/* NAV (reemplazar bloque) */
+nav.nav{
+  position: sticky;       /* se queda arriba, pero se puede ocultar */
+  top: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(94,142,255,.08);
+  transform: translateY(0);                 /* <- para animar salida */
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+nav.nav.nav--hide{ transform: translateY(-100%); } /* <- se oculta al bajar */
+
+.nav-inner{ display:flex; align-items:center; justify-content:space-between; height:64px; }
+
+/* Logo (antes lo tenías en 144px) */
+.brand img{ height:40px; display:block; }
+
+/* Ajuste móvil */
+@media (max-width:640px){
+  .nav-inner{ height:56px; }
+  .brand img{ height:28px; }
+}
+
 
     /* INTERACTIONS */
     .card, .btn, .trust-badge{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);will-change:transform, box-shadow;transition:transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s ease, border-color .25s ease}
