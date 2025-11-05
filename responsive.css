@@ -65,7 +65,7 @@ button, .button {
     display: inline-block;
   }
 }
-/* === NAV RESPONSIVE === */
+/* === NAV RESPONSIVE (v2) === */
 nav.nav {
   position: sticky;
   top: 0;
@@ -95,6 +95,7 @@ nav.nav {
 }
 .nav-links a {
   padding: 8px 0;
+  color: #0f172a;           /* asegura contraste en desktop */
 }
 
 /* Botón hamburguesa (oculto en desktop) */
@@ -126,24 +127,52 @@ nav.nav {
 
 /* MOBILE */
 @media (max-width: 768px) {
-  .nav-inner { height: 64px; }
-  .brand img { height: 40px; }
-  .nav-toggle { display: inline-block; }
+  .nav-inner { 
+    height: 64px; 
+    position: relative;           /* para centrar el toggle */
+    justify-content: center;      /* centra el contenido base */
+  }
+
+  /* Oculta el logo y centra el hamburguesa */
+  .brand { display: none; }
+
+  .nav-toggle { 
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center;
+    position: absolute; 
+    left: 50%; 
+    transform: translateX(-50%);  /* queda centrado horizontalmente */
+  }
+
+  /* Menú desplegado: fondo blanco y texto visible */
   .nav-links { display: none; }
+
   .nav-links.open {
     display: flex;
     flex-direction: column;
     gap: 18px;
     position: fixed;
     inset: 0;
-    padding: 88px 24px 24px;
-    background: #fff;
+    padding: 96px 24px 24px;      /* espacio para el header */
+    background: #ffffff;          /* FONDO visible */
+    color: #0f172a;
+    z-index: 2000;
+    box-shadow: 0 10px 30px rgba(15,23,42,.12);
   }
+
+  .nav-links.open a {
+    color: #0f172a;               /* asegura contraste en móvil */
+    font-weight: 700;
+    font-size: 18px;
+  }
+
   .nav-links .cta {
     align-self: stretch;
     justify-content: center;
     height: 48px;
     border-radius: 14px;
   }
+
   body.no-scroll { overflow: hidden; }
 }
