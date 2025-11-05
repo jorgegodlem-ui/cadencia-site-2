@@ -34,3 +34,144 @@ button, .button {
 /* --- HERO --- */
 .hero {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+@media (max-width: 768px){
+  .hero,
+  .cta,
+  .contact,
+  .hablemos {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero .button,
+  .cta .button,
+  .hablemos .button {
+    margin-inline: auto;
+    display: inline-block;
+  }
+}
+
+/* === NAV CON MENÚ SANDWICH === */
+nav.nav{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,255,255,.95);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(94,142,255,.08);
+}
+.nav-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:68px;
+}
+.brand img{
+  height:44px;
+  display:block;
+}
+
+/* Enlaces de escritorio */
+.nav-links.desktop{
+  display:flex;
+  gap:22px;
+  align-items:center;
+}
+.nav-links.desktop a{
+  padding:8px 0;
+  color:#0f172a;
+  font-weight:500;
+  text-decoration:none;
+  transition:color .2s ease;
+}
+.nav-links.desktop a:hover{
+  color:#5E8EFF;
+}
+
+/* Burger (botón sandwich) */
+.burger{
+  display:none;
+  width:42px;
+  height:42px;
+  border:1px solid #e5e7eb;
+  border-radius:12px;
+  background:#fff;
+  cursor:pointer;
+  position:relative;
+  align-items:center;
+  justify-content:center;
+}
+.burger span{
+  position:absolute;
+  left:10px;
+  right:10px;
+  height:2px;
+  background:#0f172a;
+  transition:transform .25s, opacity .25s;
+}
+.burger span:nth-child(1){ top:12px; }
+.burger span:nth-child(2){ top:20px; }
+.burger span:nth-child(3){ top:28px; }
+.burger.active span:nth-child(1){ transform:translateY(8px) rotate(45deg); }
+.burger.active span:nth-child(2){ opacity:0; }
+.burger.active span:nth-child(3){ transform:translateY(-8px) rotate(-45deg); }
+
+/* Panel móvil */
+.menu{
+  position:fixed;
+  inset:0;
+  top:68px;
+  background:#fff;
+  transform:translateX(100%);
+  transition:transform .3s ease;
+  padding:24px 20px 40px;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  z-index:999;
+}
+.menu.open{ transform:translateX(0); }
+
+.menu a{
+  font-size:18px;
+  line-height:1.3;
+  padding:14px 6px;
+  border-bottom:1px solid #eef2ff;
+  color:#0f172a;
+  text-decoration:none;
+  font-weight:600;
+}
+.menu a:hover{ color:#5E8EFF; }
+
+.menu .cta-mobile{
+  margin-top:8px;
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#5E8EFF,#7da9ff);
+  color:#fff;
+  padding:14px;
+  border-radius:12px;
+  border:0;
+  font-weight:700;
+}
+body.no-scroll{ overflow:hidden; }
+
+/* Responsive */
+@media (max-width:960px){
+  .nav-links.desktop{ display:none; }
+  .burger{ display:inline-flex; }
+}
+@media (min-width:961px){
+  .menu{ display:none; }
+}
