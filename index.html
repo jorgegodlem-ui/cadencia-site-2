@@ -328,5 +328,24 @@ nav.nav.nav--hide{ transform: translateY(-100%); } /* <- se oculta al bajar */
       });
     }
   </script>
+  <script>
+(function () {
+  const nav = document.querySelector('nav.nav');
+  if (!nav) return;
+  let lastY = window.pageYOffset;
+
+  window.addEventListener('scroll', function () {
+    const y = window.pageYOffset;
+
+    // si bajas (y > lastY) y ya pasaste 80px, oculto
+    if (y > lastY + 10 && y > 80) {
+      nav.classList.add('nav--hide');
+    } else {
+      nav.classList.remove('nav--hide');
+    }
+    lastY = y;
+  }, { passive: true });
+})();
+</script>
 </body>
 </html>
