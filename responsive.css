@@ -126,4 +126,35 @@ body, html, .container, nav, header, footer, section, .grid {
   max-width: 100vw;
   overflow-x: hidden;
 }
+/* === FIX FINAL: elimina completamente la barra de scroll del nav === */
+nav.nav {
+  overflow: hidden !important;      /* bloquea scroll interno */
+  height: 68px !important;          /* altura exacta del nav */
+}
+
+.nav-inner {
+  height: 68px !important;
+  overflow: hidden !important;      /* no deja espacio vertical extra */
+}
+
+.nav-links.desktop {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  white-space: nowrap;
+  overflow: hidden !important;      /* 💣 sin scroll vertical ni horizontal */
+}
+
+/* Garantiza que todo el nav ocupe ancho completo sin expandirse */
+.nav .container {
+  overflow: hidden !important;
+  max-width: 100%;
+}
+
+/* Asegura que nada desborde el viewport */
+html, body {
+  overflow-x: hidden !important;
+  overflow-y: auto;
+  max-width: 100vw;
+}
 
