@@ -116,10 +116,3 @@ body, html, .container, nav, header, footer, section, .grid, .menu {
   max-width: 100vw;
   overflow-x: hidden;
 }
-/* === Mostrar solo "Hablemos" en el nav móvil === */
-@media (max-width: 768px) {
-  /* Oculta todos los links excepto el que tenga la clase .cta */
-  .nav-links.desktop a:not(.cta) {
-    display: none;
-  }
-}
