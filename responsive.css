@@ -157,4 +157,41 @@ html, body {
   overflow-y: auto;
   max-width: 100vw;
 }
+/* === PARCHE NAV: sin scrollbar y sin romper desktop === */
+nav.nav,
+.nav .container,
+.nav-inner{
+  height:68px;
+  overflow:visible;                 /* nada de scroll interno */
+}
+
+.nav-links.desktop{
+  display:flex;
+  align-items:center;
+  gap:22px;
+  white-space:nowrap;               /* que no salten de línea */
+  overflow:visible;
+}
+
+/* Oculta cualquier scrollbar que algún navegador meta en el nav */
+nav.nav::-webkit-scrollbar,
+.nav-inner::-webkit-scrollbar,
+.nav-links.desktop::-webkit-scrollbar{ display:none; }
+.nav-links.desktop{ scrollbar-width:none; }          /* Firefox */
+
+/* Evita scroll lateral global */
+html, body{ max-width:100vw; overflow-x:hidden; }
+
+/* === MOBILE: mostrar solo "Hablemos" (tu botón azul) === */
+@media (max-width:768px){
+  .nav-links.desktop a:not(.cta){ display:none !important; }
+  .nav-links.desktop .cta{
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    height:40px;
+    padding:0 16px;
+    border-radius:12px;
+  }
+}
 
