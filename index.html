@@ -361,5 +361,40 @@ nav.nav.nav--hide{ transform: translateY(-100%); } /* <- se oculta al bajar */
   }, { passive: true });
 })();
 </script>
+  <script>
+(function(){
+  const btn = document.querySelector('.nav-toggle');
+  const menu = document.getElementById('navMenu');
+  if(!btn || !menu) return;
+
+  const openMenu = () => {
+    menu.classList.add('open');
+    btn.setAttribute('aria-expanded','true');
+    document.body.classList.add('no-scroll');
+  };
+  const closeMenu = () => {
+    menu.classList.remove('open');
+    btn.setAttribute('aria-expanded','false');
+    document.body.classList.remove('no-scroll');
+  };
+
+  btn.addEventListener('click', () => {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    expanded ? closeMenu() : openMenu();
+  });
+
+  menu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', closeMenu);
+  });
+
+  window.addEventListener('keydown', e => {
+    if(e.key === 'Escape') closeMenu();
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) closeMenu();
+  });
+})();
+</script>
 </body>
 </html>
