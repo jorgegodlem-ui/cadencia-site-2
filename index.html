@@ -367,5 +367,14 @@
     });
   });
 </script>
+  <script>
+  const btn = document.querySelector('.hamburger');
+  const menu = document.getElementById('menu');
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', menu.classList.contains('open'));
+  });
+</script>
+
 </body>
 </html>
