@@ -110,20 +110,22 @@
 <nav class="nav">
   <div class="container nav-inner">
     <a class="brand" href="/">
-      <img src="./logo.svg" alt="Cadencia Digital" width="160" height="40" loading="eager" onerror="this.style.display='none';" />
+      <!-- MISMO LOGO DEL FOOTER -->
+      <img class="logo" alt="Cadencia Digital"
+           src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAYAAAB5fY51AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAACEcSURBVHgB7Z0LsF1VeccXnaKSRBLbJFSH3EB88AihWBBJBIQCVYRC6wMoYKtWQElrQyso4shj5K0l0ibKQ6AjUEDqiAWJAxkRNGFQDCYEyowG7g3VBuJ4L0LAOpbu/9rnO3fdddc+r3vuuXdxf7+ZM/fcc/ZZe+211/qv7/vWY2/3coEDAMiA33MAAJmAYAFANiBYAJANCBYAZAOCBQDZgGABQDYgWACQDQgWAGQDggUA2YBgAUA2IFgAkA0IFgBkA4IFANmAYAFANiBYAJANCBYAZAOCBQDZgGABQDYgWACQDQgWAGQDggUA2YBgAUA2IFgAkA0IFgBkA4IFANmAYAFANiBYAJANCBYAZAOCBQDZgGABQDYgWACQDQgWAGQDggUA2YBgAUA2IFgAkA0IFgBkA4IFANmAYAFANiBYAJANCBYAZAOCBQDZgGABQDYgWACQDQgWAGQDggUA2YBgAUA2IFgAkA0IFgBkA4IFANmAYAFANiBYAJANCBYAZAOCBQDZgGABQDYgWACQDQgWAGQDggUA2YBgAUA2IFgAkA0IFgBkA4IFANmAYAFANiBYAJANCBYAZAOCBQDZgGABQDYgWACQDQgWAGQDggUA2YBgAUA2IFgAkA0IFgBkA4IFANmAYAFANiBYAJANCBYAZMPvOxg31m941G3Y... (MISMO LARGO DEL DATA-URL) ...IBv+H6sLTvKbCwAxAAAAAElFTkSuQmCC">
     </a>
 
-    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="primary-nav">
-      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    <button class="hamburger" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
     </button>
 
-    <ul id="primary-nav" class="nav-links">
-      <li><a href="#servicios">Servicios</a></li>
-      <li><a href="#proceso">Proceso</a></li>
-      <li><a href="#clientes">Clientes</a></li>
-      <li><a href="#testimonios">Testimonios</a></li>
-      <li><a class="cta" href="#contacto">Hablemos</a></li>
-    </ul>
+    <div class="nav-links" id="menu">
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#clientes">Clientes</a>
+      <a href="#testimonios">Testimonios</a>
+      <a href="#contacto" class="cta">Cotiza tu plan</a>
+    </div>
   </div>
 </nav>
   <!-- HERO -->
