@@ -47,27 +47,29 @@ button, .button {
     text-align: center;
   }
 }
+
 /* --- CORRIGE BOTÓN HABLEMOS EN MÓVIL --- */
 @media (max-width: 768px){
   .hero,
   .cta,
   .contact,
   .hablemos {
-    text-align: center;            /* centra el contenido */
-    justify-content: center !important; /* centra si es flex */
+    text-align: center;
+    justify-content: center !important;
     align-items: center !important;
   }
 
   .hero .button,
   .cta .button,
   .hablemos .button {
-    margin-inline: auto;           /* centra el botón horizontalmente */
+    margin-inline: auto;
     display: inline-block;
   }
 }
+
 /* --- CLIENTES (LOGOS) --- */
 #clientes { 
-  padding-block: 48px;              /* un poco más de respiro vertical */
+  padding-block: 48px;
 }
 
 #clientes h2 {
@@ -80,13 +82,13 @@ button, .button {
   gap: 24px;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   align-items: center;
-  justify-items: center;             /* centra cada tarjeta dentro de la celda */
+  justify-items: center;
 }
 
 /* Tarjeta del logo */
 #clientes .logo-card {
   width: 100%;
-  height: 110px;                     /* altura consistente para todas */
+  height: 110px;
   padding: 16px 20px;
   background: #fff;
   border: 1px solid rgba(0,0,0,.08);
@@ -101,14 +103,14 @@ button, .button {
 
 /* Imagen del logo dentro de la tarjeta */
 #clientes .logo-card img {
-  max-height: 48px;                  /* controla la altura del logo */
+  max-height: 48px;
   width: auto;
   object-fit: contain;
   filter: grayscale(100%) opacity(.85);
   transition: filter .2s ease, transform .2s ease;
 }
 
-/* Hover / Focus: eleva, colorea el logo y mejora contraste */
+/* Hover / Focus */
 #clientes .logo-card:hover,
 #clientes .logo-card:focus-visible {
   transform: translateY(-2px);
@@ -123,9 +125,9 @@ button, .button {
   transform: translateY(-1px);
 }
 
-/* Accesibilidad: anillos de foco claros */
+/* Accesibilidad */
 #clientes .logo-card:focus-visible {
-  outline: 2px solid #4c9ffe;        /* azul accesible */
+  outline: 2px solid #4c9ffe;
   outline-offset: 2px;
 }
 
@@ -145,7 +147,7 @@ button, .button {
   }
 }
 
-/* (Opcional) Modo oscuro básico si tu sitio lo usa */
+/* --- MODO OSCURO --- */
 @media (prefers-color-scheme: dark) {
   #clientes .logo-card {
     background: #111;
@@ -157,4 +159,37 @@ button, .button {
     border-color: rgba(255,255,255,.18);
     box-shadow: 0 6px 16px rgba(0,0,0,.35);
   }
+}
+
+/* === FIX LOGOS ESPECÍFICOS ============================= */
+
+/* ---- Fazt: fondo oscuro para que se vea su logo blanco ---- */
+#clientes a[aria-label="Fazt"] {
+  background: #101318;
+  border-color: rgba(0,0,0,.22);
+}
+#clientes a[aria-label="Fazt"] img {
+  filter: none !important;
+  opacity: 1 !important;
+  max-height: 44px;
+}
+#clientes a[aria-label="Fazt"]:hover,
+#clientes a[aria-label="Fazt"]:focus-visible {
+  box-shadow: 0 10px 24px rgba(0,0,0,.35);
+}
+
+/* ---- Myteatox: asegúrate que su logo se muestre bien ---- */
+#clientes a[aria-label="Myteatox" i],
+#clientes a[aria-label="MyteaTOX" i],
+#clientes a[aria-label="MyteatoX" i] {
+  background: #fff;
+}
+#clientes a[aria-label="Myteatox" i] img,
+#clientes a[aria-label="MyteaTOX" i] img,
+#clientes a[aria-label="MyteatoX" i] img {
+  filter: none !important;
+  opacity: 1 !important;
+  max-height: 48px;
+  width: auto;
+  object-fit: contain;
 }
