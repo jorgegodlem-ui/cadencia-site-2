@@ -75,3 +75,65 @@ button, .button {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
 }
+/* --- ESTILOS PARA LA SECCIÓN DE CLIENTES CON TARJETAS --- */
+
+/* Contenedor principal para los logos con grid */
+.logos-grid {
+    display: grid;
+    /* Ajusta el minmax para que quepan 3 logos en pantallas medianas y 5-6 en grandes */
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); 
+    gap: 20px; /* Espacio entre las tarjetas */
+    justify-items: center; /* Centra las tarjetas en la cuadrícula */
+    align-items: center; /* Centra verticalmente si las tarjetas tienen alturas diferentes */
+    margin-top: 40px;
+}
+
+/* Estilo para cada tarjeta de logo */
+.logo-card {
+    background-color: #fff; /* Fondo blanco para la tarjeta */
+    border-radius: 12px; /* Esquinas redondeadas */
+    padding: 20px; /* Espacio interno */
+    display: flex; /* Para centrar el logo dentro de la tarjeta */
+    justify-content: center;
+    align-items: center;
+    height: 120px; /* Altura fija para la tarjeta */
+    width: 100%; /* Ocupa el ancho disponible en la columna */
+    max-width: 180px; /* Ancho máximo para que no se extienda demasiado */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones para el hover */
+}
+
+/* Imagen dentro de la tarjeta */
+.logo-card img {
+    max-height: 80px; /* Limita la altura del logo */
+    max-width: 100%; /* Asegura que el logo no se salga de la tarjeta */
+    object-fit: contain; /* Ajusta la imagen sin distorsionarla */
+    opacity: 0.8; /* Opacidad inicial sutil */
+    transition: opacity 0.3s ease; /* Transición para el hover */
+}
+
+/* Efecto hover en la tarjeta */
+.logo-card:hover {
+    transform: translateY(-5px); /* Pequeño levantamiento */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+}
+
+/* Efecto hover en la imagen del logo */
+.logo-card:hover img {
+    opacity: 1; /* El logo se ilumina */
+}
+
+/* Responsive para que en móviles solo haya 2 columnas */
+@media (max-width: 768px) {
+    .logos-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* 2 columnas en móvil */
+        gap: 15px;
+    }
+    .logo-card {
+        height: 100px; /* Altura más pequeña en móvil */
+        padding: 15px;
+    }
+    .logo-card img {
+        max-height: 60px; /* Logos más pequeños en móvil */
+    }
+}
