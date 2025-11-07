@@ -47,168 +47,21 @@ button, .button {
     text-align: center;
   }
 }
-
 /* --- CORRIGE BOTÓN HABLEMOS EN MÓVIL --- */
 @media (max-width: 768px){
   .hero,
   .cta,
   .contact,
   .hablemos {
-    text-align: center;
-    justify-content: center !important;
+    text-align: center;            /* centra el contenido */
+    justify-content: center !important; /* centra si es flex */
     align-items: center !important;
   }
 
   .hero .button,
   .cta .button,
   .hablemos .button {
-    margin-inline: auto;
+    margin-inline: auto;           /* centra el botón horizontalmente */
     display: inline-block;
   }
-}
-
-/* --- CLIENTES (LOGOS) --- */
-#clientes { 
-  padding-block: 48px;
-}
-
-#clientes h2 {
-  margin: 0 0 24px 0;
-  text-align: center;
-}
-
-#clientes .logos {
-  display: grid;
-  gap: 24px;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  align-items: center;
-  justify-items: center;
-}
-
-/* Tarjeta del logo */
-#clientes .logo-card {
-  width: 100%;
-  height: 110px;
-  padding: 16px 20px;
-  background: #fff;
-  border: 1px solid rgba(0,0,0,.08);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
-  will-change: transform;
-}
-
-/* Imagen del logo dentro de la tarjeta */
-#clientes .logo-card img {
-  max-height: 48px;
-  width: auto;
-  object-fit: contain;
-  filter: grayscale(100%) opacity(.85);
-  transition: filter .2s ease, transform .2s ease;
-}
-
-/* Hover / Focus */
-#clientes .logo-card:hover,
-#clientes .logo-card:focus-visible {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0,0,0,.08);
-  border-color: rgba(0,0,0,.12);
-}
-
-/* Quita gris y sube un pelín el logo en hover/focus */
-#clientes .logo-card:hover img,
-#clientes .logo-card:focus-visible img {
-  filter: grayscale(0%) opacity(1);
-  transform: translateY(-1px);
-}
-
-/* Accesibilidad */
-#clientes .logo-card:focus-visible {
-  outline: 2px solid #4c9ffe;
-  outline-offset: 2px;
-}
-
-/* Ajustes finos en móvil */
-@media (max-width: 768px) {
-  #clientes { padding-block: 40px; }
-  #clientes .logos { gap: 16px; }
-  #clientes .logo-card { height: 96px; padding: 14px 16px; }
-  #clientes .logo-card img { max-height: 40px; }
-}
-
-/* Respeta usuarios con “reducir movimiento” */
-@media (prefers-reduced-motion: reduce) {
-  #clientes .logo-card,
-  #clientes .logo-card img {
-    transition: none;
-  }
-}
-
-/* --- MODO OSCURO --- */
-@media (prefers-color-scheme: dark) {
-  #clientes .logo-card {
-    background: #111;
-    border-color: rgba(255,255,255,.12);
-    box-shadow: none;
-  }
-  #clientes .logo-card:hover,
-  #clientes .logo-card:focus-visible {
-    border-color: rgba(255,255,255,.18);
-    box-shadow: 0 6px 16px rgba(0,0,0,.35);
-  }
-}
-
-/* === FIX LOGOS ESPECÍFICOS ============================= */
-
-/* ---- Fazt: fondo oscuro para que se vea su logo blanco ---- */
-#clientes a[aria-label="Fazt"] {
-  background: #101318;
-  border-color: rgba(0,0,0,.22);
-}
-#clientes a[aria-label="Fazt"] img {
-  filter: none !important;
-  opacity: 1 !important;
-  max-height: 44px;
-}
-#clientes a[aria-label="Fazt"]:hover,
-#clientes a[aria-label="Fazt"]:focus-visible {
-  box-shadow: 0 10px 24px rgba(0,0,0,.35);
-}
-
-/* ---- Myteatox: asegúrate que su logo se muestre bien ---- */
-#clientes a[aria-label="Myteatox" i],
-#clientes a[aria-label="MyteaTOX" i],
-#clientes a[aria-label="MyteatoX" i] {
-  background: #fff;
-}
-#clientes a[aria-label="Myteatox" i] img,
-#clientes a[aria-label="MyteaTOX" i] img,
-#clientes a[aria-label="MyteatoX" i] img {
-  filter: none !important;
-  opacity: 1 !important;
-  max-height: 48px;
-  width: auto;
-  object-fit: contain;
-}
-/* === FIX RÁPIDO LOGOS === */
-
-/* quita el gris forzado (que apaga algunos logos) */
-#clientes .logo-card img{
-  filter: none !important;
-  opacity: 1 !important;
-}
-
-/* Fazt = 3er logo (orden: Cassis, K18, Fazt, Fungipharma, Myteatox):
-   ponle fondo oscuro para que su logo blanco se vea */
-#clientes .logos .logo-card:nth-child(3){
-  background: #0f1218 !important;
-  border-color: rgba(0,0,0,.2);
-}
-#clientes .logos .logo-card:nth-child(3) img{
-  max-height: 44px;           /* un pelito más chico para respirar */
-  filter: none !important;
-  opacity: 1 !important;
 }
