@@ -193,3 +193,22 @@ button, .button {
   width: auto;
   object-fit: contain;
 }
+/* === FIX RÁPIDO LOGOS === */
+
+/* quita el gris forzado (que apaga algunos logos) */
+#clientes .logo-card img{
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+/* Fazt = 3er logo (orden: Cassis, K18, Fazt, Fungipharma, Myteatox):
+   ponle fondo oscuro para que su logo blanco se vea */
+#clientes .logos .logo-card:nth-child(3){
+  background: #0f1218 !important;
+  border-color: rgba(0,0,0,.2);
+}
+#clientes .logos .logo-card:nth-child(3) img{
+  max-height: 44px;           /* un pelito más chico para respirar */
+  filter: none !important;
+  opacity: 1 !important;
+}
