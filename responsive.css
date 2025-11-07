@@ -65,3 +65,96 @@ button, .button {
     display: inline-block;
   }
 }
+/* --- CLIENTES (LOGOS) --- */
+#clientes { 
+  padding-block: 48px;              /* un poco más de respiro vertical */
+}
+
+#clientes h2 {
+  margin: 0 0 24px 0;
+  text-align: center;
+}
+
+#clientes .logos {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  align-items: center;
+  justify-items: center;             /* centra cada tarjeta dentro de la celda */
+}
+
+/* Tarjeta del logo */
+#clientes .logo-card {
+  width: 100%;
+  height: 110px;                     /* altura consistente para todas */
+  padding: 16px 20px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  will-change: transform;
+}
+
+/* Imagen del logo dentro de la tarjeta */
+#clientes .logo-card img {
+  max-height: 48px;                  /* controla la altura del logo */
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(100%) opacity(.85);
+  transition: filter .2s ease, transform .2s ease;
+}
+
+/* Hover / Focus: eleva, colorea el logo y mejora contraste */
+#clientes .logo-card:hover,
+#clientes .logo-card:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,.08);
+  border-color: rgba(0,0,0,.12);
+}
+
+/* Quita gris y sube un pelín el logo en hover/focus */
+#clientes .logo-card:hover img,
+#clientes .logo-card:focus-visible img {
+  filter: grayscale(0%) opacity(1);
+  transform: translateY(-1px);
+}
+
+/* Accesibilidad: anillos de foco claros */
+#clientes .logo-card:focus-visible {
+  outline: 2px solid #4c9ffe;        /* azul accesible */
+  outline-offset: 2px;
+}
+
+/* Ajustes finos en móvil */
+@media (max-width: 768px) {
+  #clientes { padding-block: 40px; }
+  #clientes .logos { gap: 16px; }
+  #clientes .logo-card { height: 96px; padding: 14px 16px; }
+  #clientes .logo-card img { max-height: 40px; }
+}
+
+/* Respeta usuarios con “reducir movimiento” */
+@media (prefers-reduced-motion: reduce) {
+  #clientes .logo-card,
+  #clientes .logo-card img {
+    transition: none;
+  }
+}
+
+/* (Opcional) Modo oscuro básico si tu sitio lo usa */
+@media (prefers-color-scheme: dark) {
+  #clientes .logo-card {
+    background: #111;
+    border-color: rgba(255,255,255,.12);
+    box-shadow: none;
+  }
+  #clientes .logo-card:hover,
+  #clientes .logo-card:focus-visible {
+    border-color: rgba(255,255,255,.18);
+    box-shadow: 0 6px 16px rgba(0,0,0,.35);
+  }
+}
