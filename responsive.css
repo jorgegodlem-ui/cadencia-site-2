@@ -67,26 +67,11 @@ button, .button {
 }
 /* --- ESTILOS PARA LA SECCIÓN DE LOGOS DE CLIENTES --- */
 
-/* Contenedor principal de los logos (Clase .logos) */
-.logos {
-    display: grid;
-    /* Esto asegura que el grid se adapte bien, permitiendo 5 elementos en desktop */
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
-    gap: 32px; 
-    align-items: center;
-    justify-items: center;
-    margin-top: 40px;
-}
-
-/* Regla para el logo individual (Clase .logo-card) */
-.logo-card img {
-    max-height: 80px; /* Limita el tamaño visual de los logos */
-    width: auto;
-    opacity: 0.7; /* Opacidad sutil por defecto */
-    transition: opacity 0.3s;
-}
-
-/* Efecto hover: El logo se ilumina al pasar el mouse */
-.logo-card img:hover {
-    opacity: 1; 
+/* --- Ajuste específico para 5 o más logos en pantallas grandes (Desktop) --- */
+@media (min-width: 992px) {
+    /* Mantenemos el grid base, pero aseguramos que los espacios permitan 5 o más logos pequeños */
+    .grid {
+        /* Bajamos el minmax de 280px a 150px para que quepan 5 en una fila */
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
 }
