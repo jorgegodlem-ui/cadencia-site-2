@@ -241,6 +241,10 @@ button, .button {
         width: 100%;
         height: 100%;
         overflow: hidden;
+        border-radius: 12px; /* Bordes redondeados sutiles */
+    border: 3px solid var(--azul); /* Contorno de 3px de tu azul corporativo */
+    /* ================================= */
+}
     }
     
     .hero-image img {
