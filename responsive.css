@@ -46,7 +46,25 @@ button, .button {
   /* Efecto al pasar el ratón */
   background-color: var(--azul-oscuro); 
 }
+/* --- ESTILO PARA TARJETAS DE SERVICIOS (Service Cards) --- */
+.service-card {
+    /* Fondo, Padding, y Borde para el estilo de Tarjeta */
+    background-color: #fff; 
+    padding: 30px 20px; 
+    border: 1px solid #eee; 
+    border-radius: 12px;
+    text-align: center; 
+    height: 100%; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03); 
+    
+    transition: all 0.3s ease;
+}
 
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); 
+    border-color: var(--azul); /* Usa tu azul corporativo al pasar el mouse */
+}
 /* --- REJILLAS Y FILAS --- */
 .grid {
   display: grid;
