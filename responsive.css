@@ -64,7 +64,7 @@ button, .button {
 .hero {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* Eliminamos el justify-content: space-between para que el contenido fluya */
   gap: 32px;
 }
 @media (max-width: 768px) {
