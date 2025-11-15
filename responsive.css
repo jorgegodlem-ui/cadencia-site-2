@@ -172,3 +172,7 @@ button, .button {
         max-height: 60px;
     }
 }
+/* --- ESTILO ADICIONAL PARA EL BOTÓN DEL HERO --- */
+.hero-cta {
+    margin-top: 25px; /* Un poco de espacio arriba del botón */
+}
