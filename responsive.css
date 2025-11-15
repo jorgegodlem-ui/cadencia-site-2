@@ -225,11 +225,8 @@ button, .button {
         /* Añade cualquier estilo de borde o sombra si lo deseas */
     }
 }
-/* --- REGISTRO DE MEDIA QUERIES PARA DESKTOP --- */
-/* Esta sección contiene los ajustes de diseño solo para pantallas grandes */
-
+/* --- AJUSTE PARA EL HERO EN DESKTOP (A PARTIR DE 992px) --- */
 @media (min-width: 992px) {
-    
     /* FIX DE LAS COLUMNAS DEL HERO (40% texto / 60% imagen) */
     .hero-content {
         display: grid; 
@@ -237,17 +234,37 @@ button, .button {
         grid-template-columns: 0.8fr 1.2fr; /* 40% vs 60% */
         align-items: center;
     }
+
+    /* FIX DE LA IMAGEN DEL HERO (Ajuste perfecto al cuadro) */
+    .hero-image {
+        display: block; 
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
     
+    .hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* CLAVE: Ajusta la imagen al cuadro (1920x1080) sin deformarla */
+        display: block;
+    }
+
     /* FIX DEL 3x3: FUERZA LAS 3 COLUMNAS EN SERVICIOS */
+    /* Este bloque sobrescribe el que ya tienes dentro de otro @media y corrige el problema 5 y 1 */
     .services-grid {
         grid-template-columns: repeat(3, 1fr) !important; 
         gap: 30px;
     }
-}
-/* --- ESTILO PARA TÍTULOS DE SECCIÓN --- */
-.section h2 {
-    text-align: center; /* Centramos el título */
-    margin-bottom: 40px; /* Separación CLAVE del título de lo que sigue */
-    font-size: 2.5rem; /* Tamaño de fuente para que destaque */
-    color: #333; /* Color oscuro para el texto principal */
+
+    /* --- AJUSTE PARA TÍTULOS DE SECCIÓN --- */
+    /* Este estilo lo movemos aquí para que la separación del h2 funcione */
+    .section h2 {
+        margin-bottom: 40px; /* Separación CLAVE del título de lo que sigue */
+        font-size: 2.5rem; 
+        color: #333; 
+        text-align: center;
+    }
+
+    /* Nota: Se eliminó el segundo y tercer bloque de @media (min-width: 992px) que causaba conflicto */
 }
