@@ -46,6 +46,12 @@ button, .button {
   /* Efecto al pasar el ratón */
   background-color: var(--azul-oscuro); 
 }
+/* --- ESTILO DEL LOGO (CADENCIA DIGITAL) --- */
+.logo img { 
+    height: 480px; /* Aumenta el tamaño, ajusta a 50px si lo quieres aún más grande */
+    width: auto; /* Mantiene la proporción */
+    display: block; 
+}
 /* --- ESTILO PARA TARJETAS DE SERVICIOS (Service Cards) --- */
 .service-card {
     /* Mismo Tamaño y Estilo Limpio */
