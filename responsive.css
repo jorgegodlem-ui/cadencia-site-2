@@ -176,3 +176,21 @@ button, .button {
 .hero-cta {
     margin-top: 40px !important; /* Un poco de espacio arriba del botón */
 }
+/* --- AJUSTE PARA EL HERO EN DESKTOP (A PARTIR DE 992px) --- */
+@media (min-width: 992px) {
+    /* Aquí definimos el Hero en dos columnas con la proporción Texto:Imagen de 40:60 */
+    .hero-content {
+        display: grid; 
+        gap: 60px; /* Aumentamos el espacio entre las columnas */
+        grid-template-columns: 0.8fr 1.2fr; 
+        align-items: center;
+        /* Sobrescribimos el display: flex; del .hero principal */
+    }
+
+    /* Regla para que la imagen se vea bien en su columna */
+    .hero-image img {
+        max-width: 100%;
+        height: auto;
+        /* Añade cualquier estilo de borde o sombra si lo deseas */
+    }
+}
