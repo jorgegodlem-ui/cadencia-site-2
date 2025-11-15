@@ -117,6 +117,12 @@ button, .button {
     .grid {
         /* Bajamos el minmax de 280px a 150px para que quepan 5 en una fila */
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        /* --- GRID PARA LA SECCIÓN DE SERVICIOS (3 COLUMNAS) --- */
+.services-grid {
+    /* Fuerza 3 columnas de ancho igual */
+    grid-template-columns: repeat(3, 1fr) !important; 
+    gap: 30px;
+}
     }
 }
 /* --- ESTILOS PARA LA SECCIÓN DE CLIENTES CON TARJETAS --- */
