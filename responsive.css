@@ -4,6 +4,11 @@ body, html { margin: 0; padding: 0; }
 img { max-width: 100%; height: auto; display: block; }
 section { padding: 40px 20px; }
 .container { max-width: 1200px; margin: auto; }
+/* --- VARIABLES DE COLOR --- */
+:root {
+    --azul: #5B8CFF; /* TU AZUL CORPORATIVO (#5B8CFF) */
+    --azul-oscuro: #4c72cc; /* Un tono más oscuro para el efecto hover */
+}
 
 /* --- TEXTOS FLUIDOS --- */
 h1 { font-size: clamp(28px, 5vw, 44px); line-height: 1.2; }
@@ -19,6 +24,27 @@ button, .button {
   padding: 12px 20px;
   border-radius: 8px;
   border: none;
+}
+/* --- BOTÓN PRIMARIO (USA EL AZUL DE MARCA) --- */
+.primary-button {
+  display: inline-block; 
+  text-decoration: none; 
+  text-align: center;
+  font-weight: 600;
+  cursor: pointer;
+  
+  /* Uso de tu color corporativo */
+  background-color: var(--azul); 
+  color: #fff; /* Texto blanco sobre azul */
+  
+  /* Herencia de tamaño y padding del bloque button, .button */
+  
+  transition: background-color 0.3s ease;
+}
+
+.primary-button:hover {
+  /* Efecto al pasar el ratón */
+  background-color: var(--azul-oscuro); 
 }
 
 /* --- REJILLAS Y FILAS --- */
