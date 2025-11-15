@@ -238,3 +238,10 @@ button, .button {
         gap: 30px;
     }
 }
+/* --- ESTILO PARA TÍTULOS DE SECCIÓN --- */
+.section h2 {
+    text-align: center; /* Centramos el título */
+    margin-bottom: 40px; /* Separación CLAVE del título de lo que sigue */
+    font-size: 2.5rem; /* Tamaño de fuente para que destaque */
+    color: #333; /* Color oscuro para el texto principal */
+}
