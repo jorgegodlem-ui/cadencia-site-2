@@ -174,5 +174,5 @@ button, .button {
 }
 /* --- ESTILO ADICIONAL PARA EL BOTÓN DEL HERO --- */
 .hero-cta {
-    margin-top: 100px; /* Un poco de espacio arriba del botón */
+    margin-top: 40px !important; /* Un poco de espacio arriba del botón */
 }
