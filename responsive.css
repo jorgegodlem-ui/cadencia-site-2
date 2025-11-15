@@ -219,3 +219,22 @@ button, .button {
         /* Añade cualquier estilo de borde o sombra si lo deseas */
     }
 }
+/* --- REGISTRO DE MEDIA QUERIES PARA DESKTOP --- */
+/* Esta sección contiene los ajustes de diseño solo para pantallas grandes */
+
+@media (min-width: 992px) {
+    
+    /* FIX DE LAS COLUMNAS DEL HERO (40% texto / 60% imagen) */
+    .hero-content {
+        display: grid; 
+        gap: 60px;
+        grid-template-columns: 0.8fr 1.2fr; /* 40% vs 60% */
+        align-items: center;
+    }
+    
+    /* FIX DEL 3x3: FUERZA LAS 3 COLUMNAS EN SERVICIOS */
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr) !important; 
+        gap: 30px;
+    }
+}
